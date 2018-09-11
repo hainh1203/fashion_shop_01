@@ -17,11 +17,11 @@ build:
       - framgia-ci test-connect mysql_test 3306 60
       - php artisan migrate --database=mysql_test
 test:
-  eslint:
-    ignore: false
-    command: eslint --format=checkstyle
-      --output-file=.framgia-ci-reports/eslint.xml
-      resources/assets/js/ --ext .js
+#  eslint:
+#    ignore: false
+#    command: eslint --format=checkstyle
+#      --output-file=.framgia-ci-reports/eslint.xml
+#      resources/assets/js/ --ext .js
   phpcs:
     ignore: false
     command: echo '' | phpcs --standard=Framgia --report-checkstyle=.framgia-ci-reports/phpcs.xml app
@@ -29,6 +29,6 @@ cache:
   composer:
     folder: vendor
     file: composer.lock
-  nodejs:
-    folder: node_modules
-    file: package-lock.json
+#  nodejs:
+#    folder: node_modules
+#    file: package-lock.json
